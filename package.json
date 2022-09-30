@@ -1,0 +1,7 @@
+{
+  "name": "@wcd/jessefox.lwc-l8onmg9s",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "npx wcd-cli@latest serve yGW9z9JdzhQNNdnMZHvA --open"
+  }
+}
