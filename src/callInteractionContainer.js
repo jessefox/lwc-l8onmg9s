@@ -31,5 +31,9 @@ export default class CallInteractionContainer extends LightningElement {
       balanceAmount: 149.55,
       ccsFileNum: '324614859'
     }
-  ]
+  ];
+  originalAddress = 'ABC Street\nNew York, NY 10001';
+  currentAddress = 'XYZ Street\nNew York, NY 10001';
+  authorizedUsers = 'Mitch Parker\nLinda Murdock';
+  notes = '- If authentication is refused, you may continue with the conversation as long as their full name has been verified.';
 }

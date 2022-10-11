@@ -3,3 +3,21 @@
   padding: .5rem;
   border-radius: .2rem;
 }
+.ccs-box {
+  border-radius: .25rem;
+  border: 1px solid #dddbda;
+  margin: .5rem;
+}
+.ccs-box > .header, .ccs-box > .body {
+  padding: .5rem;
+}
+.ccs-box > .header {
+  width: 100%;
+  background-color: #eeeeee;
+}
+.textarea-toggle {
+  padding-top: 2rem;
+}
+.input-toggle {
+  padding-top: 1rem;
+}
