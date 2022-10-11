@@ -1,12 +1,52 @@
 <template>
     <div class="slds-grid slds-p-around_x-small">
-        <div class="slds-col slds-size_3-of-4 slds-p-around_small slds-m-around_small"
-            style="border: 1px solid #000000">
-            <div class="slds-grid">
+        <div class="slds-col slds-size_3-of-4 slds-m-right_small slds-grid slds-grid_vertical">
+            <div class="slds-m-bottom_small">
+                <c-call-interaction-alert></c-call-interaction-alert>
+            </div>
+            <div class="content-section slds-grid_vertical slds-m-bottom_small">
+                <div class="slds-col slds-p-around_x-small">
+                    <div class="slds-box">
+                        <lightning-formatted-rich-text value={script}></lightning-formatted-rich-text>
+                    </div>
+                    <div class="slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-p-vertical_x-small slds-p-right_x-small">
+                            <lightning-input name="phone" label="Phone" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-input name="file_num" label="File #" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-input name="best_phone" label="Best Phone" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-button label="Advanced Search" title="Advanced Search"
+                                icon-name="utility:new_window" icon-position="right" stretch="true" variant="brand">
+                            </lightning-button>
+                        </div>
+                        <div class="slds-col slds-p-vertical_x-small slds-p-left_x-small">
+                            <lightning-button label="Next" title="Next" icon-name="utility:chevronright"
+                                icon-position="right" stretch="true" variant="brand"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col content-section slds-m-bottom_small">
+                <lightning-datatable key-field="ccsFileNum" columns={columns} data={data} hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+            <div class="slds-col content-section slds-m-bottom_small slds-grid">
+                <div class="slds-col">
+                </div>
+                <div class="slds-col">
+                </div>
+                <div class="slds-col">
+                </div>
+            </div>
+            <div class="slds-col content-section">
             </div>
         </div>
-        <div
-            class="slds-col slds-size_1-of-4 slds-p-around_small slds-m-around_small slds-grid_vertical slds-grid_align-spread">
+        <div class="content-section slds-col slds-size_1-of-4 slds-grid_vertical slds-grid_align-spread">
             <div class="slds-col slds-m-bottom_large">
                 <c-call-actions></c-call-actions>
             </div>
