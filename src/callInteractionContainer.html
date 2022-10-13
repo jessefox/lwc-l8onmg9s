@@ -1,0 +1,134 @@
+<template>
+    <div class="slds-grid slds-p-around_x-small">
+        <div class="slds-col slds-size_3-of-4 slds-m-right_small slds-grid slds-grid_vertical">
+            <div class="slds-m-bottom_small">
+                <c-call-interaction-alert></c-call-interaction-alert>
+            </div>
+            <div class="content-section slds-grid_vertical slds-m-bottom_small">
+                <div class="slds-col slds-p-around_x-small">
+                    <div class="slds-box">
+                        <lightning-formatted-rich-text value={script}></lightning-formatted-rich-text>
+                    </div>
+                    <div class="slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-p-vertical_x-small slds-p-right_x-small">
+                            <lightning-input name="phone" label="Phone" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-input name="file_num" label="File #" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-input name="best_phone" label="Best Phone" type="text"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-p-around_x-small">
+                            <lightning-button label="Advanced Search" title="Advanced Search"
+                                icon-name="utility:new_window" icon-position="right" stretch="true" variant="brand">
+                            </lightning-button>
+                        </div>
+                        <div class="slds-col slds-p-vertical_x-small slds-p-left_x-small">
+                            <lightning-button label="Next" title="Next" icon-name="utility:chevronright"
+                                icon-position="right" stretch="true" variant="brand"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col content-section slds-m-bottom_small">
+                <div class="slds-p-around_x-small">
+                    <lightning-datatable key-field="ccsFileNum" columns={columns} data={data} hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </div>
+            <div class="slds-col content-section slds-m-bottom_small slds-grid">
+                <div
+                    class="slds-col slds-size_1-of-3 slds-p-vertical_x-small slds-p-left_x-small slds-p-right_medium slds-grid slds-grid_vertical">
+                    <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-textarea name="original_address" label="Original Address"
+                                value={originalAddress}>
+                            </lightning-textarea>
+                        </div>
+                        <div class="textarea-toggle">
+                            <lightning-input name="original_address_verified" label="Origin Address Verified"
+                                variant="label-hidden" value="true" type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-textarea name="current_address" label="Current Address" value={currentAddress}>
+                            </lightning-textarea>
+                        </div>
+                        <div class="textarea-toggle">
+                            <lightning-input name="original_address_verified" label="Origin Address Verified"
+                                variant="label-hidden" value="true" type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-3 slds-p-vertical_x-small slds-p-left_medium slds-p-right_medium slds-p-left_large slds-grid slds-grid_vertical">
+                    <div class="slds-col slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-input name="phone" label="Phone" type="phone"></lightning-input>
+                        </div>
+                        <div>
+                            <lightning-input name="phone_verified" label="Phone Verified" variant="label-hidden"
+                                type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-input name="ssn" label="SSN" type="text"></lightning-input>
+                        </div>
+                        <div>
+                            <lightning-input name="ssn_verified" label="SSN Verified" variant="label-hidden"
+                                type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-input name="dob" label="DOB" type="date"></lightning-input>
+                        </div>
+                        <div>
+                            <lightning-input name="dob_verified" label="DOB Verified" variant="label-hidden"
+                                type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-3 slds-p-vertical_x-small slds-p-left_medium slds-p-right_x-small slds-grid slds-grid_vertical">
+                    <div class="slds-col slds-grid slds-grid_vertical-align-end">
+                        <div class="slds-col slds-m-right_x-small">
+                            <lightning-input name="ccs_pin" label="CCS Pin" type="text"></lightning-input>
+                        </div>
+                        <div>
+                            <lightning-input name="ccs_pin_verified" label="CCS Pin Verified" variant="label-hidden"
+                                type="toggle"></lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-grid">
+                        <div class="slds-col">
+                            <lightning-textarea name="authorized_user" label="Authorized User" value={authorizedUser}>
+                            </lightning-textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col content-section">
+                <div class="ccs-box">
+                    <div class="header">
+                        <h3>General Notes</h3>
+                    </div>
+                    <div class="body">
+                        <lightning-formatted-rich-text value={notes}></lightning-formatted-rich-text>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-section slds-col slds-size_1-of-4 slds-grid_vertical slds-grid_align-spread">
+            <div class="slds-col slds-m-bottom_large">
+                <c-call-actions></c-call-actions>
+            </div>
+            <div class="slds-col slds-m-top">
+                <c-call-links></c-call-links>
+            </div>
+        </div>
+    </div>
+</template>
